@@ -1,0 +1,2003 @@
+{
+  "analysis_metadata": {
+    "timestamp": "2025-08-14T15:05:44.749396",
+    "analysis_type": "road_prioritization",
+    "total_roads_analyzed": 153
+  },
+  "prioritized_roads": [
+    {
+      "road_id": "104",
+      "priority_score": 0.368,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.023,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 195.1,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "800",
+      "priority_score": 0.363,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.021,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 190.6,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "604",
+      "priority_score": 0.362,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.021,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 177.6,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "819",
+      "priority_score": 0.361,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.02,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 199.5,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "242",
+      "priority_score": 0.361,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.02,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 232.6,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "590",
+      "priority_score": 0.36,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.02,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 185.0,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "349",
+      "priority_score": 0.36,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.02,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 184.3,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "204",
+      "priority_score": 0.357,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.019,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 143.7,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "753",
+      "priority_score": 0.357,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.019,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 222.0,
+        "section_count": 7
+      }
+    },
+    {
+      "road_id": "70",
+      "priority_score": 0.357,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.019,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 221.2,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "550",
+      "priority_score": 0.357,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.019,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 200.3,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "246",
+      "priority_score": 0.356,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.019,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 227.9,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "929",
+      "priority_score": 0.356,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.019,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 260.7,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "764",
+      "priority_score": 0.354,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.018,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 215.3,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "570",
+      "priority_score": 0.354,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.018,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 200.7,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "268",
+      "priority_score": 0.353,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.018,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 216.9,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "352",
+      "priority_score": 0.352,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 115.0,
+        "section_count": 7
+      }
+    },
+    {
+      "road_id": "634",
+      "priority_score": 0.352,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 165.8,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "276",
+      "priority_score": 0.352,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 127.8,
+        "section_count": 8
+      }
+    },
+    {
+      "road_id": "394",
+      "priority_score": 0.351,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 279.3,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "296",
+      "priority_score": 0.35,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 190.4,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "594",
+      "priority_score": 0.349,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 198.4,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "18",
+      "priority_score": 0.348,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 240.3,
+        "section_count": 7
+      }
+    },
+    {
+      "road_id": "545",
+      "priority_score": 0.348,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 209.3,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "495",
+      "priority_score": 0.348,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 219.5,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "230",
+      "priority_score": 0.347,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 266.6,
+        "section_count": 12
+      }
+    },
+    {
+      "road_id": "757",
+      "priority_score": 0.347,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 305.0,
+        "section_count": 8
+      }
+    },
+    {
+      "road_id": "502",
+      "priority_score": 0.347,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 179.5,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "457",
+      "priority_score": 0.347,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 201.3,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "684",
+      "priority_score": 0.346,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.015,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 220.7,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "232",
+      "priority_score": 0.345,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.015,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 276.5,
+        "section_count": 10
+      }
+    },
+    {
+      "road_id": "755",
+      "priority_score": 0.344,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.015,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 298.5,
+        "section_count": 9
+      }
+    },
+    {
+      "road_id": "759",
+      "priority_score": 0.344,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.015,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 309.2,
+        "section_count": 10
+      }
+    },
+    {
+      "road_id": "291",
+      "priority_score": 0.343,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 147.3,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "758",
+      "priority_score": 0.343,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 302.0,
+        "section_count": 9
+      }
+    },
+    {
+      "road_id": "627",
+      "priority_score": 0.342,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 188.7,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "910",
+      "priority_score": 0.342,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 281.7,
+        "section_count": 7
+      }
+    },
+    {
+      "road_id": "280",
+      "priority_score": 0.341,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 243.8,
+        "section_count": 11
+      }
+    },
+    {
+      "road_id": "756",
+      "priority_score": 0.341,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 307.0,
+        "section_count": 10
+      }
+    },
+    {
+      "road_id": "80",
+      "priority_score": 0.34,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.013,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 208.8,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "286",
+      "priority_score": 0.339,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.013,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 259.9,
+        "section_count": 8
+      }
+    },
+    {
+      "road_id": "243",
+      "priority_score": 0.339,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.013,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 176.1,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "700",
+      "priority_score": 0.338,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.013,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 208.4,
+        "section_count": 7
+      }
+    },
+    {
+      "road_id": "967",
+      "priority_score": 0.338,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.013,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 157.7,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "551",
+      "priority_score": 0.338,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.013,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 210.6,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "253",
+      "priority_score": 0.337,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.012,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 147.5,
+        "section_count": 7
+      }
+    },
+    {
+      "road_id": "966",
+      "priority_score": 0.336,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.012,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 159.6,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "131",
+      "priority_score": 0.336,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.012,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 102.2,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "760",
+      "priority_score": 0.335,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.012,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 307.7,
+        "section_count": 8
+      }
+    },
+    {
+      "road_id": "105",
+      "priority_score": 0.332,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.011,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 195.9,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "282",
+      "priority_score": 0.331,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.01,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 255.5,
+        "section_count": 10
+      }
+    },
+    {
+      "road_id": "723",
+      "priority_score": 0.329,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.012,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 93.6,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "345",
+      "priority_score": 0.329,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.01,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 152.2,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "850",
+      "priority_score": 0.327,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.009,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 102.6,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "797",
+      "priority_score": 0.327,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.009,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 232.1,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "791",
+      "priority_score": 0.323,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.008,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 224.4,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "178",
+      "priority_score": 0.322,
+      "priority_class": "MEDIUM",
+      "metrics": {
+        "curvature_variation": 0.007,
+        "critical_scenarios": 0,
+        "unique_patterns": 2,
+        "rare_patterns": 0,
+        "total_length": 133.9,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "645",
+      "priority_score": 0.265,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.022,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 121.0,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "397",
+      "priority_score": 0.26,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.02,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 186.5,
+        "section_count": 7
+      }
+    },
+    {
+      "road_id": "795",
+      "priority_score": 0.258,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.019,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 218.7,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "858",
+      "priority_score": 0.256,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.019,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 201.1,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "599",
+      "priority_score": 0.256,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.019,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 179.1,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "855",
+      "priority_score": 0.256,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.019,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 192.3,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "750",
+      "priority_score": 0.255,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.018,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 103.8,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "549",
+      "priority_score": 0.255,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.018,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 174.0,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "624",
+      "priority_score": 0.255,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.018,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 155.7,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "78",
+      "priority_score": 0.253,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.018,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 220.0,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "859",
+      "priority_score": 0.252,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 155.1,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "882",
+      "priority_score": 0.252,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 187.7,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "873",
+      "priority_score": 0.252,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 175.5,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "695",
+      "priority_score": 0.252,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 192.2,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "860",
+      "priority_score": 0.251,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 204.9,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "792",
+      "priority_score": 0.251,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 209.1,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "77",
+      "priority_score": 0.251,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 220.1,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "722",
+      "priority_score": 0.251,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 129.3,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "843",
+      "priority_score": 0.25,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.017,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 183.3,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "129",
+      "priority_score": 0.249,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 192.7,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "772",
+      "priority_score": 0.249,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 102.4,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "20",
+      "priority_score": 0.249,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 227.7,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "402",
+      "priority_score": 0.249,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 207.9,
+        "section_count": 7
+      }
+    },
+    {
+      "road_id": "79",
+      "priority_score": 0.248,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 206.4,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "552",
+      "priority_score": 0.248,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 173.9,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "132",
+      "priority_score": 0.248,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 153.8,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "23",
+      "priority_score": 0.248,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.016,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 221.0,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "442",
+      "priority_score": 0.246,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.015,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 236.5,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "820",
+      "priority_score": 0.245,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.015,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 170.1,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "254",
+      "priority_score": 0.245,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.015,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 168.1,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "21",
+      "priority_score": 0.245,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.015,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 222.2,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "173",
+      "priority_score": 0.245,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.015,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 99.6,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "446",
+      "priority_score": 0.243,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 266.4,
+        "section_count": 8
+      }
+    },
+    {
+      "road_id": "10",
+      "priority_score": 0.243,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 173.7,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "417",
+      "priority_score": 0.242,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 147.9,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "279",
+      "priority_score": 0.242,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 242.5,
+        "section_count": 11
+      }
+    },
+    {
+      "road_id": "445",
+      "priority_score": 0.242,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 304.1,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "281",
+      "priority_score": 0.241,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 262.1,
+        "section_count": 9
+      }
+    },
+    {
+      "road_id": "382",
+      "priority_score": 0.241,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 135.7,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "702",
+      "priority_score": 0.241,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 135.4,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "769",
+      "priority_score": 0.241,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.014,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 136.5,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "447",
+      "priority_score": 0.24,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.013,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 232.2,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "6",
+      "priority_score": 0.239,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.013,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 155.8,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "216",
+      "priority_score": 0.238,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.013,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 138.3,
+        "section_count": 7
+      }
+    },
+    {
+      "road_id": "444",
+      "priority_score": 0.238,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.013,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 242.8,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "152",
+      "priority_score": 0.237,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.012,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 142.3,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "450",
+      "priority_score": 0.237,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.012,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 243.6,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "285",
+      "priority_score": 0.237,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.012,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 248.2,
+        "section_count": 7
+      }
+    },
+    {
+      "road_id": "115",
+      "priority_score": 0.236,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.012,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 269.0,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "443",
+      "priority_score": 0.236,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.012,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 230.5,
+        "section_count": 8
+      }
+    },
+    {
+      "road_id": "113",
+      "priority_score": 0.236,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.012,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 246.1,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "120",
+      "priority_score": 0.236,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.012,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 132.0,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "857",
+      "priority_score": 0.235,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.012,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 181.9,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "294",
+      "priority_score": 0.234,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.011,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 154.0,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "75",
+      "priority_score": 0.232,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.011,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 180.1,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "449",
+      "priority_score": 0.232,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.011,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 262.5,
+        "section_count": 7
+      }
+    },
+    {
+      "road_id": "284",
+      "priority_score": 0.23,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.01,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 260.9,
+        "section_count": 6
+      }
+    },
+    {
+      "road_id": "713",
+      "priority_score": 0.23,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.01,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 142.3,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "207",
+      "priority_score": 0.229,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.01,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 160.2,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "125",
+      "priority_score": 0.229,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.01,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 129.0,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "292",
+      "priority_score": 0.229,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.01,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 146.5,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "741",
+      "priority_score": 0.227,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.009,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 174.5,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "324",
+      "priority_score": 0.226,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.009,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 128.2,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "767",
+      "priority_score": 0.226,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.009,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 167.3,
+        "section_count": 5
+      }
+    },
+    {
+      "road_id": "123",
+      "priority_score": 0.225,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.008,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 156.5,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "127",
+      "priority_score": 0.225,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.008,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 124.8,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "802",
+      "priority_score": 0.224,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.008,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 249.8,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "413",
+      "priority_score": 0.223,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.008,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 141.9,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "9",
+      "priority_score": 0.221,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.007,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 157.5,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "7",
+      "priority_score": 0.221,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.007,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 153.8,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "153",
+      "priority_score": 0.219,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.006,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 154.3,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "192",
+      "priority_score": 0.218,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.006,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 162.5,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "832",
+      "priority_score": 0.217,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.006,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 300.8,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "155",
+      "priority_score": 0.216,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.005,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 139.4,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "72",
+      "priority_score": 0.214,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.005,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 156.2,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "415",
+      "priority_score": 0.213,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.004,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 172.5,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "416",
+      "priority_score": 0.209,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.003,
+        "critical_scenarios": 0,
+        "unique_patterns": 1,
+        "rare_patterns": 0,
+        "total_length": 144.5,
+        "section_count": 4
+      }
+    },
+    {
+      "road_id": "351",
+      "priority_score": 0.121,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.007,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 119.0,
+        "section_count": 2
+      }
+    },
+    {
+      "road_id": "16",
+      "priority_score": 0.116,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.005,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 178.3,
+        "section_count": 2
+      }
+    },
+    {
+      "road_id": "365",
+      "priority_score": 0.113,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.005,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 98.1,
+        "section_count": 2
+      }
+    },
+    {
+      "road_id": "874",
+      "priority_score": 0.112,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.004,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 190.4,
+        "section_count": 2
+      }
+    },
+    {
+      "road_id": "456",
+      "priority_score": 0.111,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.004,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 175.8,
+        "section_count": 2
+      }
+    },
+    {
+      "road_id": "677",
+      "priority_score": 0.11,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.004,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 98.5,
+        "section_count": 2
+      }
+    },
+    {
+      "road_id": "898",
+      "priority_score": 0.11,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.003,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 198.5,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "452",
+      "priority_score": 0.109,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.003,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 176.2,
+        "section_count": 2
+      }
+    },
+    {
+      "road_id": "367",
+      "priority_score": 0.108,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.003,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 99.4,
+        "section_count": 2
+      }
+    },
+    {
+      "road_id": "12",
+      "priority_score": 0.106,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.002,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 219.4,
+        "section_count": 3
+      }
+    },
+    {
+      "road_id": "589",
+      "priority_score": 0.105,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.002,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 130.4,
+        "section_count": 2
+      }
+    },
+    {
+      "road_id": "103",
+      "priority_score": 0.101,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.0,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 201.1,
+        "section_count": 2
+      }
+    },
+    {
+      "road_id": "76",
+      "priority_score": 0.1,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.0,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 98.9,
+        "section_count": 2
+      }
+    },
+    {
+      "road_id": "411",
+      "priority_score": 0.1,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.0,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 119.1,
+        "section_count": 1
+      }
+    },
+    {
+      "road_id": "59",
+      "priority_score": 0.1,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.0,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 180.3,
+        "section_count": 1
+      }
+    },
+    {
+      "road_id": "945",
+      "priority_score": 0.1,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.0,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 124.9,
+        "section_count": 1
+      }
+    },
+    {
+      "road_id": "892",
+      "priority_score": 0.1,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.0,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 105.2,
+        "section_count": 1
+      }
+    },
+    {
+      "road_id": "364",
+      "priority_score": 0.098,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.0,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 97.8,
+        "section_count": 1
+      }
+    },
+    {
+      "road_id": "325",
+      "priority_score": 0.096,
+      "priority_class": "LOW",
+      "metrics": {
+        "curvature_variation": 0.0,
+        "critical_scenarios": 0,
+        "unique_patterns": 0,
+        "rare_patterns": 0,
+        "total_length": 95.6,
+        "section_count": 2
+      }
+    }
+  ],
+  "priority_distribution": {
+    "HIGH": 0,
+    "MEDIUM": 57,
+    "LOW": 96
+  }
+}
