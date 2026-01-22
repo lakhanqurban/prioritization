@@ -157,8 +157,16 @@ analyzer = RoadAnalyzer(
 
 ## 📄 License & Citation
 
-MIT License - see LICENSE file for details.
+This project is released under the MIT License — see the LICENSE file for details.
 
-This framework is designed for research in test suite reduction and autonomous vehicle validation. Please cite appropriately if used in academic publications.
+This framework is intended for research on test suite reduction and autonomous vehicle validation. 
 
-For questions or contributions, please open an issue or pull request on the repository.
+If you use this framework, or any part of it, in academic work, please cite the following paper:
+```
+@article{ali2026coverage,
+  title={Coverage-Guided Road Selection and Prioritization for Efficient Testing in Autonomous Driving Systems},
+  author={Ali, Qurban and Stocco, Andrea and Mariani, Leonardo and Riganelli, Oliviero},
+  journal={arXiv preprint arXiv:2601.08609},
+  year={2026}
+}
+```
