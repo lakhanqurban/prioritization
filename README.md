@@ -1,130 +1,98 @@
 # Coverage-Guided Road Selection and Prioritization for Efficient Testing in Autonomous Driving Systems
 
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This repository contains the implementation for the paper *"Coverage-Guided Road Selection and Prioritization for Efficient Testing in Autonomous Driving Systems"*.
 
-A comprehensive framework for analyzing road geometry, segmenting and clustering similar road sections using DTW-based matching and hybrid agglomerative clustering, performing coverage-based test suite reduction via greedy road selection, and prioritizing roads using multi-metric scoring with APFD-based evaluation. The extended version of the paper is under review.
+A framework for analyzing road geometry, segmenting and clustering similar road sections using DTW-based matching and hybrid agglomerative clustering, performing coverage-based test suite reduction via greedy road selection, and prioritizing roads using multi-metric scoring with APFD-based evaluation. The extended version of the paper is under review.
 
-## Note: 
+The code has been updated to improve the clustering technique with a comprehensive distance metric based on DTW, max curvature, curvature entropy, and section length.
 
-The code is updated in order to improve the clustering technique with comprehensive distance metric based on DTW, max curvature, curvature entropy, and section length.  
+## Quick Start
 
-## Architecture Overview
+```bash
+# Run the full analysis pipeline
+python Code/main.py
+```
 
-The framework is organized into modular components that handle specific responsibilities:
+The pipeline automatically loads road data, performs section matching, clusters similar sections, selects a minimal representative road set, and prioritizes them for testing.
+
+---
+
+## Architecture
+
+The framework is organized into modular components:
 
 ```
-main.py                      # Main orchestration
+main.py                      # Pipeline orchestration
 ├── path_config.py          # Path management
 ├── data_classes.py         # Data structures
-├── io_operations.py        # File I/O operations
+├── io_operations.py        # File I/O
 ├── section_analysis.py     # Road section analysis
 ├── dynamic_analysis.py    # Vehicle behavior analysis
-├── gpu_operations.py      # GPU acceleration (CUDA/MPS)
+├── gpu_operations.py      # GPU acceleration
 ├── clustering.py          # Hybrid agglomerative clustering
-├── coverage_reduction.py  # Test reduction logic
+├── coverage_reduction.py  # Test reduction
 ├── prioritization.py      # Road prioritization
 └── comparison_analysis.py # Approach comparison
 ```
 
-## Core Files
+### Core Infrastructure
 
-### `main.py` (Main Entry Point)
-- Orchestrates the entire analysis pipeline
-- Manages workflow: data loading → section analysis → clustering → reduction → prioritization
-- Contains the `main()` function for execution
+**`main.py`** — Orchestrates the pipeline: data loading, section analysis, clustering, reduction, prioritization, and result comparison. Supports GPU acceleration with automatic fallback.
 
-### `path_config.py`
-- Centralized path management
-- Supports custom configurations for different datasets
-- Manages input/output directory structures
+**`path_config.py`** — Centralized path management with support for custom dataset configurations and automatic directory creation.
 
-### `data_classes.py`
-- `DynamicMetrics`: Stores vehicle behavior metrics (speed, steering, errors, etc.)
-- `RoadSegment`: Represents classified road sections with geometric properties
+**`data_classes.py`** — Defines `DynamicMetrics` (vehicle behavior metrics) and `RoadSegment` (classified road sections with geometric properties).
 
-## Analysis Components
+**`io_operations.py`** — Manages all file I/O: JSON/CSV reading, section registry persistence, failed road ID loading, and comprehensive result saving (coverage reduction, cluster analysis, dynamic analysis, prioritization comparison).
 
-### `section_analysis.py`
-- Classifies road segments into straight/curved sections using hysteresis
-- Performs DTW-based section matching with curvature profiles
+### Road Analysis
 
-### `dynamic_analysis.py`
-- Calculates dynamic behavior metrics (steering complexity, speed variation, etc.)
-- Computes dynamic similarity between road sections
+**`section_analysis.py`** — Classifies road segments into straight/curved sections using hysteresis-based thresholding. Performs DTW-based section matching with curvature profiles, including full-section and subsection matching.
 
-### `clustering.py`
-- Implements hybrid agglomerative clustering with multi-metric geometric features
-- Combines DTW curvature profile similarity, peak difficulty, shape entropy, and section length into a weighted Euclidean (L2) distance
-- Supports dynamic behavioral features for hybrid geometric + dynamic clustering
-- Adaptive threshold calculation based on data distribution characteristics (CV-based percentile selection)
-- Uses agglomerative clustering with complete linkage and precomputed distance matrices
-- Groups sections by type (left_curve/right_curve) and applies clustering separately
+**`dynamic_analysis.py`** — Calculates dynamic behavior metrics (steering complexity, speed variation, cross-track error, yaw rate) from vehicle simulation data. Computes dynamic similarity between road sections for hybrid clustering.
 
-### `gpu_operations.py`
-- Provides GPU acceleration for CUDA (NVIDIA) and Apple Silicon (MPS via PyTorch)
-- Implements batch DTW computation on GPU for large distance matrices
-- Supports GPU-accelerated agglomerative clustering via cuML when available
-- Falls back to CPU (scikit-learn with optimized BLAS/LAPACK) when GPU unavailable
-- Includes GPU vs CPU performance benchmarking
+**`gpu_operations.py`** — Provides GPU acceleration for CUDA (NVIDIA) and Apple Silicon (MPS via PyTorch). Implements batch DTW computation, GPU-accelerated agglomerative clustering via cuML, and CPU fallback with performance benchmarking.
 
-## Reduction & Prioritization
+### Clustering & Reduction
 
-### `coverage_reduction.py`
-- Applies coverage-based test reduction using hybrid agglomerative clustering results
-- Uses greedy coverage-based road selection with priority scoring
-- Handles unique cluster prioritization (clusters covered by only one road)
-- Priority scoring combines curvature variation, critical scenarios, unique patterns, road length, and dynamic behavior metrics
-- Applies failed-road bonus for roads with historical simulation failures
+**`clustering.py`** — Implements hybrid agglomerative clustering with a multi-metric geometric distance combining DTW profile similarity, peak curvature (difficulty), shape entropy (complexity), and section length (size) via weighted Euclidean (L2) norm. Supports dynamic behavioral features for hybrid geometric + dynamic clustering. Adaptive threshold calculation uses CV-based percentile selection from pairwise distance distributions. Clustering is applied separately to left-curve and right-curve sections.
 
-### `prioritization.py`
-- Implements multiple prioritization approaches (hybrid, random)
-- Includes F*K/N probability benchmarking
+**`coverage_reduction.py`** — Applies coverage-based test reduction using greedy road selection with priority scoring. Handles unique cluster prioritization (clusters covered by only one road). Priority scores combine curvature variation, critical scenarios, unique patterns, road length, and dynamic behavior, with a bonus for historically failed roads.
 
-## Infrastructure
+### Prioritization & Evaluation
 
-### `io_operations.py`
-- Handles file I/O operations (JSON, CSV)
-- Manages section registry persistence and loading
-- Saves comprehensive analysis results (coverage reduction, cluster analysis, dynamic analysis, prioritization comparison)
-- Loads failed road IDs for priority weighting from CSV files
-- Saves prioritized roads with priority distribution and failed road statistics
+**`prioritization.py`** — Implements hybrid (multi-metric) and random prioritization approaches. Includes F*K/N probability benchmarking for expected random-selection performance and APFD calculation.
 
-### `comparison_analysis.py`
-- Compares multiple prioritization approaches (hybrid, random)
-- Calculates APFD (Average Percentage of Fault Detection) for both whole test suite and selected subset
-- Performs top-k fault detection analysis (k = 5, 10, 15, 20, 25)
-- Provides overlap analysis between approaches' top 10 roads
-- Saves comparison results to JSON files
-- Prints formatted comparison summary with recommendations
+**`comparison_analysis.py`** — Compares prioritization approaches using APFD (whole suite and selected subset), top-k fault detection (k = 5–25), overlap analysis, and prints a formatted summary with recommendations.
 
-## Step-by-Step Execution Pipeline
+---
+
+## Pipeline
 
 ### 1. Data Preparation
 
-The data is organized in the following structure:
+Road geometry (JSON) and vehicle simulation data (CSV) are organized by dataset:
 
 ```
-Dataset/
+SensoDat/
 ├── roads/
-│   └── a1/
-│       ├── 0.json
-│       ├── 1.json
-│       └── ... (road geometry files)
+│   └── a3/
+│       ├── 0.json, 1.json, ...
 ├── roads_dynamic_data/
-│   └── a1/
-│       ├── 0.csv
-│       ├── 1.csv
-│       └── ... (vehicle simulation data)
+│   └── a3/
+│       ├── 0.csv, 1.csv, ...
 └── failed_data/
-    └── a1.csv          # List of failed road IDs
+    └── a3.csv
 ```
 
-### 2. Configuration Setup
+### 2. Configuration
 
-The system uses default paths but can be customized:
+Default paths can be customized:
 
 ```python
-# Custom configuration
 config = PathConfig.create_custom_config(
     base_output_dir="./my_analysis",
     road_data_dir="./custom_data/roads",
@@ -132,11 +100,10 @@ config = PathConfig.create_custom_config(
 )
 ```
 
-### 3. Pipeline Execution
+### 3. Execution
 
-Run the complete analysis:
 ```bash
-python main.py
+python Code/main.py
 ```
 
 The pipeline automatically:
@@ -149,23 +116,23 @@ The pipeline automatically:
 7. Compares prioritization approaches (APFD, fault detection, top-k analysis)
 8. Saves comprehensive results to the output directory
 
-## 📊 Output Structure
+---
 
-After execution, the system creates:
+## Output
 
 ```
 output/
-├── a1_sections/
+├── a3_sections/
 │   ├── section_registry.json
 │   └── road_metadata.json
-├── a1_matching_info/
+├── a3_matching_info/
 │   ├── matched_sections.json
 │   ├── unmatched_sections.json
 │   └── section_matches.json
-├── a1_coverage_based_reduction/
+├── a3_dp_tsp_coverage_based_reduction/
 │   ├── coverage_reduction_summary.json
 │   ├── cluster_analysis.json
-│   ├── prioritized_selected_roads_for_testing.json
+│   ├── prioritized_roads_for_testing.json
 │   ├── dynamic_analysis.json
 │   └── prioritization_comparison/
 │       ├── hybrid_prioritization.json
@@ -173,7 +140,9 @@ output/
 │       └── prioritization_comparison_analysis.json
 ```
 
-## ⚙️ Key Configuration Parameters
+---
+
+## Configuration
 
 ```python
 analyzer = RoadAnalyzer(
@@ -186,14 +155,13 @@ analyzer = RoadAnalyzer(
 )
 ```
 
-## 📄 License & Citation
+---
 
-This project is released under the MIT License — see the LICENSE file for details.
+## Citation
 
-This framework is intended for research on test suite reduction and autonomous vehicle validation. 
+If you use this framework in academic work, please cite:
 
-If you use this framework, or any part of it, in academic work, please cite the following paper:
-```
+```bibtex
 @article{ali2026coverage,
   title={Coverage-Guided Road Selection and Prioritization for Efficient Testing in Autonomous Driving Systems},
   author={Ali, Qurban and Stocco, Andrea and Mariani, Leonardo and Riganelli, Oliviero},
@@ -201,3 +169,7 @@ If you use this framework, or any part of it, in academic work, please cite the 
   year={2026}
 }
 ```
+
+## License
+
+MIT License — see the [LICENSE](LICENSE) file for details.
