@@ -1,8 +1,12 @@
-# Road Analysis Framework
+# Coverage-Guided Road Selection and Prioritization for Efficient Testing in Autonomous Driving Systems
 
-This is the repository for the paper 'Coverage-Guided Road Selection and Prioritization for Efficient Testing in Autonomous Driving Systems'
+This repository contains the implementation for the paper *"Coverage-Guided Road Selection and Prioritization for Efficient Testing in Autonomous Driving Systems"*.
 
-A comprehensive framework for analyzing road geometry, segmenting and clustering similar road sections, and performing test suite reduction using hybrid agglomerative clustering.
+A comprehensive framework for analyzing road geometry, segmenting and clustering similar road sections using DTW-based matching and hybrid agglomerative clustering, performing coverage-based test suite reduction via greedy road selection, and prioritizing roads using multi-metric scoring with APFD-based evaluation. The extended version of the paper is under review.
+
+## Note: 
+
+The code is updated in order to improve the clustering technique with comprehensive distance metric based on DTW, max curvature, curvature entropy, and section length.  
 
 ## Architecture Overview
 
@@ -15,11 +19,11 @@ main.py                      # Main orchestration
 ├── io_operations.py        # File I/O operations
 ├── section_analysis.py     # Road section analysis
 ├── dynamic_analysis.py    # Vehicle behavior analysis
-├── clustering.py          # Hybrid clustering algorithms
+├── gpu_operations.py      # GPU acceleration (CUDA/MPS)
+├── clustering.py          # Hybrid agglomerative clustering
 ├── coverage_reduction.py  # Test reduction logic
 ├── prioritization.py      # Road prioritization
-├── comparison_analysis.py # Approach comparison
-└── visualization.py       # Results visualization
+└── comparison_analysis.py # Approach comparison
 ```
 
 ## Core Files
@@ -49,32 +53,49 @@ main.py                      # Main orchestration
 - Computes dynamic similarity between road sections
 
 ### `clustering.py`
-- Implements hybrid agglomerative clustering combining geometric + dynamic features
-- Manages cluster formation with adaptive thresholding
+- Implements hybrid agglomerative clustering with multi-metric geometric features
+- Combines DTW curvature profile similarity, peak difficulty, shape entropy, and section length into a weighted Euclidean (L2) distance
+- Supports dynamic behavioral features for hybrid geometric + dynamic clustering
+- Adaptive threshold calculation based on data distribution characteristics (CV-based percentile selection)
+- Uses agglomerative clustering with complete linkage and precomputed distance matrices
+- Groups sections by type (left_curve/right_curve) and applies clustering separately
+
+### `gpu_operations.py`
+- Provides GPU acceleration for CUDA (NVIDIA) and Apple Silicon (MPS via PyTorch)
+- Implements batch DTW computation on GPU for large distance matrices
+- Supports GPU-accelerated agglomerative clustering via cuML when available
+- Falls back to CPU (scikit-learn with optimized BLAS/LAPACK) when GPU unavailable
+- Includes GPU vs CPU performance benchmarking
 
 ## Reduction & Prioritization
 
 ### `coverage_reduction.py`
-- Applies coverage-based test reduction
-- Maps roads to clusters and selects optimal representatives
-- Handles unique cluster prioritization
+- Applies coverage-based test reduction using hybrid agglomerative clustering results
+- Uses greedy coverage-based road selection with priority scoring
+- Handles unique cluster prioritization (clusters covered by only one road)
+- Priority scoring combines curvature variation, critical scenarios, unique patterns, road length, and dynamic behavior metrics
+- Applies failed-road bonus for roads with historical simulation failures
 
 ### `prioritization.py`
 - Implements multiple prioritization approaches (hybrid, random)
 - Includes F*K/N probability benchmarking
 
-### `comparison_analysis.py`
-- Compares different prioritization approaches
-- Calculates APFD (Average Percentage of Fault Detection)
-- Provides fault detection analysis
-
 ## Infrastructure
 
 ### `io_operations.py`
 - Handles file I/O operations (JSON, CSV)
-- Manages section registry persistence
-- Saves analysis results and metadata
-- Loads failed road IDs for priority weighting
+- Manages section registry persistence and loading
+- Saves comprehensive analysis results (coverage reduction, cluster analysis, dynamic analysis, prioritization comparison)
+- Loads failed road IDs for priority weighting from CSV files
+- Saves prioritized roads with priority distribution and failed road statistics
+
+### `comparison_analysis.py`
+- Compares multiple prioritization approaches (hybrid, random)
+- Calculates APFD (Average Percentage of Fault Detection) for both whole test suite and selected subset
+- Performs top-k fault detection analysis (k = 5, 10, 15, 20, 25)
+- Provides overlap analysis between approaches' top 10 roads
+- Saves comparison results to JSON files
+- Prints formatted comparison summary with recommendations
 
 ## Step-by-Step Execution Pipeline
 
@@ -117,6 +138,16 @@ Run the complete analysis:
 ```bash
 python main.py
 ```
+
+The pipeline automatically:
+1. Checks GPU availability and benchmarks GPU vs CPU performance
+2. Loads or computes section registry and road metadata
+3. Performs or loads DTW-based section matching
+4. Applies hybrid agglomerative clustering (with optional GPU acceleration)
+5. Runs coverage-based road reduction with greedy selection
+6. Prioritizes selected roads using hybrid and random approaches
+7. Compares prioritization approaches (APFD, fault detection, top-k analysis)
+8. Saves comprehensive results to the output directory
 
 ## 📊 Output Structure
 

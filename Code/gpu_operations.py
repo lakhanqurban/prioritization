@@ -16,20 +16,18 @@ CumlAgglomerativeClustering = None  # type: ignore
 try:
     import cupy as cp  # type: ignore  # pylint: disable=import-error
     import cupyx  # type: ignore  # pylint: disable=import-error
-    # logger.info("🔧 CuPy imported successfully")
+    logger.info("🔧 CuPy imported successfully")
     
     # Try to import cuML only if CuPy is available
     try:
         from cuml.cluster import AgglomerativeClustering as CumlAgglomerativeClustering  # type: ignore  # pylint: disable=import-error
         CUDA_GPU_AVAILABLE = True
-        # logger.info("🚀 CUDA GPU acceleration available with CuPy and cuML")
+        logger.info("🚀 CUDA GPU acceleration available with CuPy and cuML")
     except (ImportError, ModuleNotFoundError):
-        # logger.info("📦 cuML not available, CUDA GPU clustering disabled")
-        pass
+        logger.info("📦 cuML not available, CUDA GPU clustering disabled")
         
 except ImportError:
-    pass
-    # logger.info("📦 CuPy not available (expected on Apple Silicon)")
+    logger.info("📦 CuPy not available (expected on Apple Silicon)")
     # Keep default values: CUDA_GPU_AVAILABLE = False, cp = None, CumlAgglomerativeClustering = None
 
 # Apple Silicon GPU support (Metal Performance Shaders)
@@ -37,21 +35,19 @@ try:
     import torch
     if hasattr(torch.backends, 'mps') and torch.backends.mps.is_available():
         APPLE_GPU_AVAILABLE = True
-        # logger.info("🍎 Apple Silicon GPU (Metal Performance Shaders) detected")
+        logger.info("🍎 Apple Silicon GPU (Metal Performance Shaders) detected")
     else:
         APPLE_GPU_AVAILABLE = False
-        # logger.info("💻 Apple Silicon GPU not available")
+        logger.info("💻 Apple Silicon GPU not available")
 except ImportError:
     APPLE_GPU_AVAILABLE = False
     torch = None  # Set to None for safety
-    pass
-    # logger.info("💻 PyTorch not available")
+    logger.info("💻 PyTorch not available")
 
 # Set overall GPU availability
 GPU_AVAILABLE = CUDA_GPU_AVAILABLE or APPLE_GPU_AVAILABLE
 if not GPU_AVAILABLE:
-    pass
-    # logger.info("💻 Using CPU-only computation (install PyTorch for Apple Silicon or cuML for NVIDIA GPU acceleration)")
+    logger.info("💻 Using CPU-only computation (install PyTorch for Apple Silicon or cuML for NVIDIA GPU acceleration)")
 
 class GPUOperationsMixin:
     """Mixin class for GPU acceleration operations"""
@@ -216,13 +212,10 @@ class GPUOperationsMixin:
         }
         
         if speedup > 1.5:
-            pass
-            # logger.info(f"🚀 GPU acceleration effective: {speedup:.2f}x speedup")
+            logger.info(f"🚀 GPU acceleration effective: {speedup:.2f}x speedup")
         elif speedup > 1.0:
-            pass
-            # logger.info(f"⚡ GPU acceleration modest: {speedup:.2f}x speedup")
+            logger.info(f"⚡ GPU acceleration modest: {speedup:.2f}x speedup")
         else:
-            pass
-            # logger.info(f"⚠️ GPU slower than CPU: {speedup:.2f}x (consider using CPU)")
+            logger.info(f"⚠️ GPU slower than CPU: {speedup:.2f}x (consider using CPU)")
             
         return performance_info

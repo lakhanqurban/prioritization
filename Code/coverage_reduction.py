@@ -39,7 +39,7 @@ class CoverageReductionMixin:
             section_matches,
             curvature_similarity_threshold=kwargs.get('curvature_similarity_threshold', None),
             enable_dynamic_clustering=kwargs.get('enable_dynamic_clustering', True),
-            dynamic_weight=kwargs.get('dynamic_weight', 0.4)
+            dynamic_weight=kwargs.get('dynamic_weight', 0.5)  # 50% dynamic, 50% geometric
         )
         if section_to_cluster is None:
             logger.error("Clustering method returned None. No clusters formed.")
@@ -309,14 +309,14 @@ class CoverageReductionMixin:
         use_dynamic = include_dynamic_analysis and self.dynamic_data_available
         
         # Normalize weights to ensure all components sum to 1.0
-        # Define relative weights for each component (50% geometric, 50% dynamic)
+        # PURE GEOMETRIC: 100% geometric features, 0% dynamic
         weights = {
             # 'coverage': 0.20,      # Base coverage (clusters)
-            'curvature': 0.25,     # Road curvature variation
-            'critical': 0.20,      # Critical scenarios
-            'unique': 0.10,        # Unique patterns
-            'length': 0.05,        # Road length diversity
-            'dynamic': 0.40        # Dynamic vehicle behavior
+            'curvature': 0.50,     # Road curvature variation (50%)
+            'critical': 0.30,      # Critical scenarios (30%)
+            'unique': 0.15,        # Unique patterns (15%)
+            'length': 0.05,        # Road length diversity (5%)
+            'dynamic': 0.0         # Dynamic vehicle behavior (0%)
         }
         
         # Calculate road-specific priority metrics
@@ -345,8 +345,8 @@ class CoverageReductionMixin:
         # Dynamic scoring bonus (normalized if enabled and data available)
         dynamic_score = 0.0
         if use_dynamic:
-            # Normalize dynamic score (typical max is around 20)
-            max_dynamic_score = 20.0
+            # Normalize dynamic score (actual max is around 300 based on data analysis)
+            max_dynamic_score = 300.0
             dynamic_score = weights['dynamic'] * min(self.get_road_dynamic_score(road_id) / max_dynamic_score, 1.0)
         else:
             # Redistribute dynamic weight proportionally to other factors when not used

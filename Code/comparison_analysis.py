@@ -269,10 +269,161 @@ class ComparisonAnalysisMixin:
         logger.info(f"Prioritization comparison results saved to {output_dir}")
 
     def print_prioritization_comparison_summary(self, comparison_results: Dict[str, Any]) -> None:
-        
         """
         Print a summary of the prioritization comparison results.
         """
         if not comparison_results:
             print("No comparison results available.")
             return
+
+        print("\n" + "="*80)
+        print("📊 PRIORITIZATION APPROACHES COMPARISON SUMMARY")
+        print("="*80)
+        
+        analysis = comparison_results['comparison_analysis']
+        approaches = comparison_results['approaches_compared']
+        
+        # Basic statistics
+        print(f"\n🎯 APPROACH STATISTICS:")
+        print(f"{'Approach':<20} {'Avg Score':<10} {'Std Dev':<10} {'Failed Top10':<12} {'High Priority %':<15}")
+        print("-" * 80)
+        
+        for approach in approaches:
+            if approach in analysis['approach_statistics']:
+                stats = analysis['approach_statistics'][approach]
+                failed_perf = analysis['failed_road_performance'].get(approach, {})
+                priority_dist = analysis['priority_class_distribution'].get(approach, {})
+                
+                avg_score = stats['avg_score']
+                std_score = stats['std_score']
+                failed_top10 = failed_perf.get('failed_roads_in_top_10', 0)
+                high_percent = priority_dist.get('HIGH_percentage', 0)
+                
+                print(f"{approach:<20} {avg_score:<10.3f} {std_score:<10.3f} {failed_top10:<12} {high_percent:<15.1f}%")
+        
+        # Selected roads context performance
+        print(f"\n📊 SELECTED ROADS CONTEXT PERFORMANCE (Limited to selected subset):")
+        selected_context_data = []
+        max_possible = 0
+        for approach in approaches:
+            if approach in analysis['failed_road_performance']:
+                perf = analysis['failed_road_performance'][approach]
+                max_possible = perf.get('available_failed_roads_in_selection', 0)
+                selected_context_data.append((
+                    approach,
+                    perf.get('failed_roads_in_top_10_selected_context', 0),
+                    perf.get('failed_roads_in_top_20_selected_context', 0),
+                    perf.get('failed_roads_in_top_10_percentage_selected_context', 0.0)
+                ))
+        
+        selected_context_data.sort(key=lambda x: x[1], reverse=True)
+        
+        print(f"Max possible failed roads in selection: {max_possible}")
+        print(f"{'Rank':<5} {'Approach':<20} {'Top 10':<8} {'Top 20':<8} {'Coverage %':<10}")
+        print("-" * 55)
+        for rank, (approach, top10, top20, coverage) in enumerate(selected_context_data, 1):
+            print(f"{rank:<5} {approach:<20} {top10:<8} {top20:<8} {coverage:<10.1f}%")
+        
+        # APFD (Average Percentage of Fault Detection) Analysis
+        if 'apfd_analysis' in analysis:
+            print(f"\n📈 APFD (AVERAGE PERCENTAGE OF FAULT DETECTION) ANALYSIS:")
+            print(f"📊 WHOLE TEST SUITE APFD:")
+            apfd_data = []
+            for approach in approaches:
+                if approach in analysis['apfd_analysis']:
+                    apfd_info = analysis['apfd_analysis'][approach]
+                    apfd_data.append((
+                        approach,
+                        apfd_info.get('apfd', 0.0),
+                        apfd_info.get('total_failed_roads', 0),
+                        apfd_info.get('average_failed_road_position', 0)
+                    ))
+            
+            apfd_data.sort(key=lambda x: x[1], reverse=True)
+            
+            print(f"{'Rank':<5} {'Approach':<20} {'APFD Score':<12} {'Failed Roads':<12} {'Avg Position':<12}")
+            print("-" * 65)
+            for rank, (approach, apfd, failed_count, avg_pos) in enumerate(apfd_data, 1):
+                print(f"{rank:<5} {approach:<20} {apfd:<12.4f} {failed_count:<12} {avg_pos:<12.1f}")
+            
+            if apfd_data:
+                best_approach = apfd_data[0][0]
+                best_apfd = apfd_data[0][1]
+                print(f"\n🏆 Best Whole Test Suite APFD: {best_approach} (APFD = {best_apfd:.4f})")
+        
+        # APFD analysis for selected roads only
+        if 'apfd_selected_analysis' in analysis:
+            print(f"\n📊 SELECTED ROADS APFD:")
+            apfd_selected_data = []
+            for approach in approaches:
+                if approach in analysis['apfd_selected_analysis']:
+                    apfd_info = analysis['apfd_selected_analysis'][approach]
+                    apfd_selected_data.append((
+                        approach,
+                        apfd_info.get('apfd_selected', 0.0),
+                        apfd_info.get('total_failed_roads_in_selection', 0),
+                        apfd_info.get('average_failed_road_position_in_selection', 0),
+                        apfd_info.get('failed_roads_coverage_in_selection', 0.0)
+                    ))
+            
+            apfd_selected_data.sort(key=lambda x: x[1], reverse=True)
+            
+            print(f"{'Rank':<5} {'Approach':<20} {'Selected APFD':<14} {'Failed in Sel':<12} {'Avg Pos':<10} {'Coverage %':<10}")
+            print("-" * 75)
+            for rank, (approach, apfd_sel, failed_count, avg_pos, coverage) in enumerate(apfd_selected_data, 1):
+                print(f"{rank:<5} {approach:<20} {apfd_sel:<14.4f} {failed_count:<12} {avg_pos:<10.1f} {coverage:<10.1f}")
+            
+            if apfd_selected_data:
+                best_approach_sel = apfd_selected_data[0][0]
+                best_apfd_sel = apfd_selected_data[0][1]
+                print(f"\n🏆 Best Selected Roads APFD: {best_approach_sel} (Selected APFD = {best_apfd_sel:.4f})")
+                
+            print(f"\n🔍 APFD COMPARISON (Whole vs Selected):")
+            print(f"{'Approach':<20} {'Whole APFD':<12} {'Selected APFD':<14} {'Difference':<12}")
+            print("-" * 60)
+            for approach in approaches:
+                whole_apfd = 0.0
+                selected_apfd = 0.0
+                if approach in analysis['apfd_analysis']:
+                    whole_apfd = analysis['apfd_analysis'][approach].get('apfd', 0.0)
+                if approach in analysis['apfd_selected_analysis']:
+                    selected_apfd = analysis['apfd_selected_analysis'][approach].get('apfd_selected', 0.0)
+                difference = selected_apfd - whole_apfd
+                print(f"{approach:<20} {whole_apfd:<12.4f} {selected_apfd:<14.4f} {difference:<12.4f}")
+        
+        # Top 10 overlap
+        print(f"\n🔄 TOP 10 ROAD OVERLAP BETWEEN APPROACHES:")
+        if 'top_10_overlap' in analysis and analysis['top_10_overlap']:
+            approach_list = list(analysis['top_10_overlap'].keys())
+            
+            print(f"{'Approach':<20}", end="")
+            for app in approach_list:
+                print(f"{app[:10]:<12}", end="")
+            print()
+            print("-" * (20 + 12 * len(approach_list)))
+            
+            for app1 in approach_list:
+                print(f"{app1:<20}", end="")
+                for app2 in approach_list:
+                    if app1 == app2:
+                        print(f"{'100.0%':<12}", end="")
+                    else:
+                        overlap_data = analysis['top_10_overlap'][app1].get(app2, {})
+                        overlap_pct = overlap_data.get('overlap_percentage', 0)
+                        print(f"{overlap_pct:<11.1f}%", end="")
+                print()
+        
+        # Recommendations
+        print(f"\n💡 RECOMMENDATIONS:")
+        best_failed_approach = max(selected_context_data, key=lambda x: x[1])
+        print(f"  • Best for failed road prioritization: {best_failed_approach[0]} ({best_failed_approach[1]} failed roads in top 10)")
+        
+        if analysis['approach_statistics']:
+            most_diverse = max(analysis['approach_statistics'].items(), key=lambda x: x[1]['std_score'])
+            print(f"  • Most diverse scoring: {most_diverse[0]} (std dev: {most_diverse[1]['std_score']:.3f})")
+        
+        if analysis['priority_class_distribution']:
+            highest_high_pct = max(analysis['priority_class_distribution'].items(), key=lambda x: x[1]['HIGH_percentage'])
+            print(f"  • Highest proportion of HIGH priority roads: {highest_high_pct[0]} ({highest_high_pct[1]['HIGH_percentage']:.1f}%)")
+        
+        print("="*80)

@@ -73,7 +73,6 @@ class PathConfig:
                            road_data_dir: str = None,
                            dynamic_data_dir: str = None,
                            failed_roads_dir: str = None,
-                           coverage_reduction_dir: str = None,
                            sections_subdir: str = "a3_sections",
                            matching_subdir: str = "a3_matching_info") -> "PathConfig":
         """
@@ -96,9 +95,7 @@ class PathConfig:
             config.base_output_dir = base_output_dir
             config.sections_output_dir = f"{base_output_dir}/{sections_subdir}"
             config.matching_output_dir = f"{base_output_dir}/{matching_subdir}"
-            # config.coverage_reduction_dir = f"{base_output_dir}/a10_dp4_coverage_based_reduction" 
-            config.coverage_reduction_dir = f"{base_output_dir}/{coverage_reduction_dir}" 
-
+            config.coverage_reduction_dir = f"{base_output_dir}/coverage_based_reduction"
             config.visualization_dir = base_output_dir
             
         if road_data_dir:
