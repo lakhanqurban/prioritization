@@ -198,6 +198,7 @@ class IOMixin:
                 'clustering_cv': getattr(self, 'clustering_stats', {}).get('cv', None),
                 'clustering_percentile': getattr(self, 'clustering_stats', {}).get('percentile', None),
                 'clustering_threshold': getattr(self, 'clustering_stats', {}).get('threshold', None),
+                'clustering_silhouette_score': getattr(self, 'clustering_stats', {}).get('silhouette_score', None),
             },
             'reduction_statistics': {
                 'total_roads_analyzed': results['total_roads'],

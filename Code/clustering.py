@@ -6,6 +6,7 @@ import numpy as np
 from typing import List, Dict, Optional
 from collections import defaultdict
 from sklearn.cluster import AgglomerativeClustering
+from sklearn.metrics import silhouette_score
 from scipy.spatial.distance import euclidean
 from fastdtw import fastdtw
 
@@ -117,6 +118,10 @@ class ClusteringMixin:
 
         section_to_cluster = {}
         next_cluster_id = 0
+
+        self._clustering_distance_matrices = {}
+        self._clustering_section_ids = {}
+        self.clustering_stats = getattr(self, 'clustering_stats', {})
 
         straight_sections = []
         for section_id, data in section_registry.items():
@@ -306,6 +311,9 @@ class ClusteringMixin:
 
             logger.info(f"Distance matrix computation complete.")
 
+            self._clustering_distance_matrices[curve_type] = distance_matrix.copy()
+            self._clustering_section_ids[curve_type] = list(curve_sections)
+
             non_zero_distances = distance_matrix[distance_matrix > 0]
             if len(non_zero_distances) > 0:
                 logger.info(f"Distance matrix statistics:")
@@ -419,6 +427,28 @@ class ClusteringMixin:
         total_matched_curved = len(matched_curved_sections)
         total_unmatched_curved = len(unmatched_curved_sections)
 
+        all_curve_section_ids = left_curve_sections + right_curve_sections
+        all_curve_labels = [section_to_cluster.get(sid, -1) for sid in all_curve_section_ids]
+        n_unique_labels = len(set(all_curve_labels))
+        silhouette = None
+        if len(all_curve_section_ids) >= 2 and n_unique_labels >= 2 and len(all_curve_section_ids) > n_unique_labels:
+            total_curve_sections = len(all_curve_section_ids)
+            combined_distance = np.zeros((total_curve_sections, total_curve_sections))
+            offset = 0
+            for curve_type_key in ['left_curve', 'right_curve']:
+                curve_sections_stored = self._clustering_section_ids.get(curve_type_key, [])
+                curve_distance = self._clustering_distance_matrices.get(curve_type_key)
+                if curve_distance is not None and len(curve_sections_stored) >= 2:
+                    n = len(curve_sections_stored)
+                    combined_distance[offset:offset+n, offset:offset+n] = curve_distance
+                offset += len(curve_sections_stored)
+            try:
+                silhouette = silhouette_score(combined_distance, all_curve_labels, metric='precomputed')
+                self.clustering_stats['silhouette_score'] = float(f"{silhouette:.4f}")
+                logger.info(f"Silhouette Score (matched curved sections): {silhouette:.4f}")
+            except Exception as e:
+                logger.warning(f"Could not compute silhouette score: {e}")
+
         clustering_mode = "PURE DYNAMIC" if (use_dynamic_clustering and dynamic_weight == 0.5) else ("Hybrid Agglomerative" if use_dynamic_clustering else "Multi-Metric Geometric")
         logger.info(f"\n{'='*60}")
         logger.info(f"{clustering_mode} Clustering results:")
@@ -428,6 +458,8 @@ class ClusteringMixin:
         logger.info(f"  - DTW-matched curved sections processed: {total_matched_curved}")
         logger.info(f"  - Unmatched curved sections in individual clusters: {total_unmatched_curved}")
         logger.info(f"  - Distance threshold used: {curvature_similarity_threshold:.4f}")
+        if silhouette is not None:
+            logger.info(f"  - Silhouette Score: {silhouette:.4f}")
         if use_dynamic_clustering:
             logger.info(f"  - Dynamic weight in clustering: {dynamic_weight:.2f}")
 

@@ -74,18 +74,18 @@ main.py                      # Pipeline orchestration
 
 ### 1. Data Preparation
 
-Road geometry (JSON) and vehicle simulation data (CSV) are organized by dataset:
+Road geometry (JSON) and vehicle simulation data (CSV) are organized by campaign:
 
 ```
 SensoDat/
 ├── roads/
-│   └── a3/
+│   └── a2/
 │       ├── 0.json, 1.json, ...
 ├── roads_dynamic_data/
-│   └── a3/
+│   └── a2/
 │       ├── 0.csv, 1.csv, ...
 └── failed_data/
-    └── a3.csv
+    └── a2.csv
 ```
 
 ### 2. Configuration
@@ -122,14 +122,14 @@ The pipeline automatically:
 
 ```
 output/
-├── a3_sections/
+├── a2_sections/
 │   ├── section_registry.json
 │   └── road_metadata.json
-├── a3_matching_info/
+├── a2_matching_info/
 │   ├── matched_sections.json
 │   ├── unmatched_sections.json
 │   └── section_matches.json
-├── a3_dp_tsp_coverage_based_reduction/
+├── a2_dp_tsp_coverage_based_reduction/
 │   ├── coverage_reduction_summary.json
 │   ├── cluster_analysis.json
 │   ├── prioritized_roads_for_testing.json
@@ -144,6 +144,8 @@ output/
 
 ## Configuration
 
+### RoadAnalyzer Parameters
+
 ```python
 analyzer = RoadAnalyzer(
     curvature_threshold=0.015,      # Curvature threshold for segment classification
@@ -154,6 +156,29 @@ analyzer = RoadAnalyzer(
     use_gpu=True                    # Enable GPU acceleration
 )
 ```
+
+### Clustering Parameters
+
+```python
+reduction_results = analyzer.coverage_based_road_reduction(
+    section_matches,
+    coverage_threshold=1.0,                    # 100% cluster coverage required
+    curvature_similarity_threshold=None,       # Auto-calculated from pairwise distance distribution (CV-based percentile)
+    enable_dynamic_clustering=True,            # Use hybrid geometric + dynamic features
+    dynamic_weight=0.5,                        # 50% dynamic, 50% geometric weighting
+    include_dynamic_analysis=True,             # Include vehicle behavior data in road selection
+    prioritize_unique_clusters=False           # Prioritize clusters covered by only one road
+)
+```
+
+### Clustering Validation Metrics
+
+The clustering step computes the **Silhouette Score** as an internal validation metric after clustering. This measures how well each section fits within its assigned cluster relative to other clusters, using the precomputed distance matrix.
+
+- **Range**: -1 to 1 (higher is better; > 0.5 indicates reasonable structure, < 0 indicates potential misassignment)
+- **Scope**: Computed over matched curved sections only (left-curve and right-curve groups combined), excluding straight sections (single cluster) and unmatched sections (individual clusters)
+- **Effect**: Purely diagnostic — does not influence cluster assignments or road selection
+
 
 ---
 
